@@ -19,4 +19,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('apps.logreg.urls')),
+    url(r'^my_posts/', include('apps.ajax_post.urls'))
 ]

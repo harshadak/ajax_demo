@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'apps.logreg',
+    'apps.ajax_post',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

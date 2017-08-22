@@ -7,8 +7,8 @@ urlpatterns = [
     url(r'^all.html$', views.all_html, name='all_html'),
     url(r'^find$', views.find, name='find'),
     url(r'^create$', views.create, name='create'),
-    url(r'^login$', views.login, name='login'),
-    url(r'^register$', views.register, name='register'),
-    url(r'^success$', views.success, name='success'),
-    url(r'^logout$', views.logout, name='logout')
+    # url(r'^login$', views.login, name='login'),
+    # url(r'^register$', views.register, name='register'),
+    # url(r'^success$', views.success, name='success'),
+    # url(r'^logout$', views.logout, name='logout')
 ]

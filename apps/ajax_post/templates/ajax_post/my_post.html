@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>My Post</title>
+</head>
+<body>
+    <h2>My Posts</h2>
+    <div class="post" id="added_posts"></div>
+    
+    <form action="/my_posts/add" method="post" id="post_form">
+        {% csrf_token %}
+        Add a note: <textarea name="post_name" id="add_post" cols="20" rows="5"></textarea>
+        <input type="submit" value="Post It!">
+    </form>
+
+    <script>
+        $("#post_form").submit(function(e) {
+            e.preventDefault();
+            console.log("I'm here");
+            $.ajax({
+                url: "/my_posts/add",
+                method: 'post',
+                data: $(this).serialize(),
+                success: function(serverResponse){
+                    console.log('success', serverResponse)
+                    $('#added_posts').append(serverResponse)
+                }
+            })
+        });
+    </script>
+</body>
+</html>
